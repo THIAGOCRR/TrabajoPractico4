@@ -42,15 +42,15 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="passMateria" pref="207" max="32767" attributes="0"/>
-                          <Component id="passFecha" alignment="0" max="32767" attributes="0"/>
-                          <Component id="passCodigoMateria" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="txtMateria" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Component id="txtNombreMateria" max="32767" attributes="0"/>
+                          <Component id="txtFecha" alignment="0" pref="236" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="102" max="32767" attributes="0"/>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -69,17 +69,17 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="passCodigoMateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="passMateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombreMateria" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="passFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtFecha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="108" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -137,15 +137,6 @@
         <Property name="text" type="java.lang.String" value="A&#xd1;O AL QUE PERTENECE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="passCodigoMateria">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="passMateria">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="passFecha">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passFechaActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -169,6 +160,12 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMateria">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombreMateria">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtFecha">
     </Component>
   </SubComponents>
 </Form>

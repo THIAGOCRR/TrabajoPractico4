@@ -14,6 +14,9 @@ public class guiMateria extends javax.swing.JInternalFrame {
      */
     public guiMateria() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -29,12 +32,12 @@ public class guiMateria extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        passCodigoMateria = new javax.swing.JPasswordField();
-        passMateria = new javax.swing.JPasswordField();
-        passFecha = new javax.swing.JPasswordField();
         btnGuardar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        txtMateria = new javax.swing.JTextField();
+        txtNombreMateria = new javax.swing.JTextField();
+        txtFecha = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
@@ -51,8 +54,6 @@ public class guiMateria extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 255));
         jLabel4.setText("AÑO AL QUE PERTENECE:");
-
-        passFecha.addActionListener(this::passFechaActionPerformed);
 
         btnGuardar.setForeground(new java.awt.Color(0, 153, 255));
         btnGuardar.setText("Guardar");
@@ -84,12 +85,12 @@ public class guiMateria extends javax.swing.JInternalFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGap(15, 15, 15)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(44, 44, 44)
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(passMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                            .addComponent(passFecha)
-                            .addComponent(passCodigoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(102, Short.MAX_VALUE))
+                            .addComponent(txtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreMateria)
+                            .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
+                .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnGuardar)
@@ -105,15 +106,15 @@ public class guiMateria extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passCodigoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
@@ -125,10 +126,6 @@ public class guiMateria extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passFechaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
@@ -138,8 +135,8 @@ public class guiMateria extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField passCodigoMateria;
-    private javax.swing.JPasswordField passFecha;
-    private javax.swing.JPasswordField passMateria;
+    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtMateria;
+    private javax.swing.JTextField txtNombreMateria;
     // End of variables declaration//GEN-END:variables
 }

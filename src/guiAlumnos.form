@@ -28,11 +28,11 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="passApellido" max="32767" attributes="0"/>
-                  <Component id="passNombre" alignment="0" pref="246" max="32767" attributes="0"/>
-                  <Component id="passLegajo" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                  <Component id="txtLegajo" min="-2" pref="153" max="-2" attributes="0"/>
+                  <Component id="txtApellido" max="32767" attributes="0"/>
+                  <Component id="txtNombre" alignment="0" pref="303" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="143" max="32767" attributes="0"/>
@@ -59,17 +59,17 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passLegajo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLegajo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtApellido" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="67" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -118,12 +118,6 @@
         <Property name="text" type="java.lang.String" value="NOMBRE:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="passLegajo">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="passApellido">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="passNombre">
-    </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -156,6 +150,12 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtLegajo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtApellido">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombre">
     </Component>
   </SubComponents>
 </Form>
