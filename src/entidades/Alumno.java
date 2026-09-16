@@ -5,6 +5,7 @@
 package entidades;
 
 import java.util.HashSet;
+import java.util.Objects;
 
 /**
  *
@@ -47,6 +48,41 @@ public class Alumno {
         this.nombre = nombre;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + this.legajo;
+        hash = 71 * hash + Objects.hashCode(this.apellido);
+        hash = 71 * hash + Objects.hashCode(this.nombre);
+        hash = 71 * hash + Objects.hashCode(this.materias);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (this.legajo != other.legajo) {
+            return false;
+        }
+        if (!Objects.equals(this.apellido, other.apellido)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return Objects.equals(this.materias, other.materias);
+    }
+    
+    
     public boolean agregarMateria(Materia m){
         return materias.add(m);  
         }
@@ -54,5 +90,6 @@ public class Alumno {
     public int cantidadMateria(){
         return materias.size();
     }
+    
     
 }

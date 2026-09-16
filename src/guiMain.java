@@ -1,3 +1,8 @@
+
+import entidades.Alumno;
+import entidades.Materia;
+import java.util.HashSet;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,6 +13,8 @@
  * @author crn70
  */
 public class guiMain extends javax.swing.JFrame {
+    public static HashSet<Alumno> listaAlumnos= new HashSet<>();
+    public static HashSet<Materia> listaMateria= new HashSet<>();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(guiMain.class.getName());
 
