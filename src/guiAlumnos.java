@@ -1,3 +1,12 @@
+
+
+
+import entidades.Alumno;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -11,9 +20,22 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form guiAlumnos
+     * 
+     * 
+     * 
+     * 
      */
-    public guiAlumnos() {
+    private HashSet<Alumno> listaAlumnos;
+    
+    
+    public guiAlumnos(HashSet<Alumno> alumnosRecibidos) {
         initComponents();
+        
+        
+        this.listaAlumnos = alumnosRecibidos;
+        
+        
+        
     }
 
     /**
@@ -56,6 +78,7 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
 
         btnNuevo.setForeground(new java.awt.Color(0, 153, 255));
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(this::btnNuevoActionPerformed);
 
         btnSalir.setForeground(new java.awt.Color(51, 153, 255));
         btnSalir.setText("Salir");
@@ -119,11 +142,72 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
+        
+       int legajo = Integer.parseInt(txtLegajo.getText());
+       String nombre = txtNombre.getText();
+       String apellido = txtApellido.getText();
+       
+       Alumno NuevoAlumno = new Alumno(legajo, nombre, apellido);
+        
+        try{
+        if(listaAlumnos.add(NuevoAlumno)){
+        
+        JOptionPane.showMessageDialog(this, "se guardo el alumno correctamente");
+            
+            
+        
+        }
+        
+        
+        else{
+            JOptionPane.showMessageDialog(this, "el alumno cargado ya se registro");
+            
+            
+        }
+        
+        }catch(NumberFormatException e ){
+        
+        
+        JOptionPane.showMessageDialog(rootPane, "tienes que poner un numero en el legajo");
+        
+        
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        
+        
+        txtLegajo.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

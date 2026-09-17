@@ -117,9 +117,9 @@ public class guiMain extends javax.swing.JFrame {
     private void MenuItemAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAlumnoActionPerformed
       
         
-         escritorio.removeAll();
-       escritorio.repaint();
-            guiAlumnos alumnos = new guiAlumnos();
+        // escritorio.removeAll();
+       //escritorio.repaint();
+            guiAlumnos alumnos = new guiAlumnos(listaAlumnos);
         escritorio.add(alumnos);
         alumnos.setVisible(true);
         escritorio.moveToFront(alumnos);
@@ -177,7 +177,8 @@ System.exit(0);
             guiInscripciones inscripciones = new guiInscripciones(listaAlumnos,listaMateria);
         escritorio.add(inscripciones);
         inscripciones.setVisible(true);
-        escritorio.moveToFront(inscripciones);
+       
+        
         
         
         
