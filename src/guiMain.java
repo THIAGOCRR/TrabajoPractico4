@@ -172,9 +172,9 @@ System.exit(0);
     private void jMenuItemInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInscripcionActionPerformed
         // TODO add your handling code here:
         
-         escritorio.removeAll();
-       escritorio.repaint();
-            guiInscripciones inscripciones = new guiInscripciones();
+        //escritorio.removeAll();
+        //escritorio.repaint();
+            guiInscripciones inscripciones = new guiInscripciones(listaAlumnos,listaMateria);
         escritorio.add(inscripciones);
         inscripciones.setVisible(true);
         escritorio.moveToFront(inscripciones);
