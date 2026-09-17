@@ -19,6 +19,8 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
    
     public guiInscripciones(HashSet<Alumno> alumnos, HashSet<Materia>materias) {
         initComponents();
+        this.alumnos = alumnos;
+        this.materias = materias;
         llenarCombos();
         
         

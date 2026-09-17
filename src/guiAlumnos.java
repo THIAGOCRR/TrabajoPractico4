@@ -142,14 +142,14 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        
+        try{
        int legajo = Integer.parseInt(txtLegajo.getText());
        String nombre = txtNombre.getText();
        String apellido = txtApellido.getText();
        
        Alumno NuevoAlumno = new Alumno(legajo, nombre, apellido);
         
-        try{
+        
         if(listaAlumnos.add(NuevoAlumno)){
         
         JOptionPane.showMessageDialog(this, "se guardo el alumno correctamente");
@@ -188,6 +188,7 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
