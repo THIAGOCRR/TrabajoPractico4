@@ -1,3 +1,9 @@
+
+import entidades.Alumno;
+import entidades.Materia;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -8,14 +14,26 @@
  * @author crn70
  */
 public class guiInscripciones extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form guiInscripciones
-     */
-    public guiInscripciones() {
+    private HashSet<Alumno> alumnos;
+    private HashSet<Materia> materias;
+   
+    public guiInscripciones(HashSet<Alumno> alumnos, HashSet<Materia>materia) {
         initComponents();
+        llenarCombos();
+        
+        
     }
-
+ public void llenarCombos() {
+        cbMateria.removeAllItems();
+        cbAlumno.removeAllItems();
+        
+        for (Alumno a : alumnos) {
+            cbAlumno.addItem(a);
+        }
+        for (Materia m : materias) {
+            cbMateria.addItem(m);  
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,8 +46,8 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        ComboBoxMaterias = new javax.swing.JComboBox<>();
-        ComboBoxAlumno = new javax.swing.JComboBox<>();
+        cbMateria = new javax.swing.JComboBox<>();
+        cbAlumno = new javax.swing.JComboBox<>();
         btnInscribir = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
@@ -45,10 +63,7 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(0, 153, 255));
         jLabel3.setText("ELIJA UN ALUMNO:");
 
-        ComboBoxMaterias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ComboBoxMaterias.addActionListener(this::ComboBoxMateriasActionPerformed);
-
-        ComboBoxAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMateria.addActionListener(this::cbMateriaActionPerformed);
 
         btnInscribir.setForeground(new java.awt.Color(0, 153, 255));
         btnInscribir.setText("Inscribir");
@@ -56,6 +71,7 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
 
         btnSalir.setForeground(new java.awt.Color(0, 153, 255));
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,8 +89,8 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ComboBoxAlumno, 0, 194, Short.MAX_VALUE)
-                            .addComponent(ComboBoxMaterias, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(cbAlumno, 0, 194, Short.MAX_VALUE)
+                            .addComponent(cbMateria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(121, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -90,14 +106,14 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(ComboBoxMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel3))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(ComboBoxAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInscribir)
@@ -108,22 +124,38 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComboBoxMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxMateriasActionPerformed
+    private void cbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMateriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxMateriasActionPerformed
+    }//GEN-LAST:event_cbMateriaActionPerformed
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-        // TODO add your handling code here:
+        Alumno aluSeleccionado= (Alumno) cbAlumno.getSelectedItem();
+        Materia matSeleccionada= (Materia) cbMateria.getSelectedItem();
+        
+        if(aluSeleccionado!=null && matSeleccionada!= null){
+            if(aluSeleccionado.agregarMateria(matSeleccionada)){
+                JOptionPane.showMessageDialog(this, "Inscripcion exitosa."+aluSeleccionado+ "ahora tiene: "+aluSeleccionado.cantidadMateria() +" materias.");
+            }else{
+               JOptionPane.showMessageDialog(this, "El alumno ya esta inscripto en esa materia");
+            }
+        }
     }//GEN-LAST:event_btnInscribirActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboBoxAlumno;
-    private javax.swing.JComboBox<String> ComboBoxMaterias;
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<Alumno> cbAlumno;
+    private javax.swing.JComboBox<Materia> cbMateria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+   
 }
