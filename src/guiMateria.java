@@ -1,3 +1,6 @@
+import entidades.Materia;
+import java.util.HashSet;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -9,13 +12,14 @@
  */
 public class guiMateria extends javax.swing.JInternalFrame {
 
+    private HashSet<Materia> listaMateria;
     /**
      * Creates new form guiMateria
      */
-    public guiMateria() {
+    public guiMateria(HashSet<Materia> lista) {
         initComponents();
         
-        
+        listaMateria = lista;
         
     }
 
@@ -57,12 +61,15 @@ public class guiMateria extends javax.swing.JInternalFrame {
 
         btnGuardar.setForeground(new java.awt.Color(0, 153, 255));
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         btnNuevo.setForeground(new java.awt.Color(0, 153, 255));
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(this::btnNuevoActionPerformed);
 
         btnSalir.setForeground(new java.awt.Color(0, 153, 255));
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +132,28 @@ public class guiMateria extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        txtMateria.setText("");
+        txtNombreMateria.setText("");
+        txtFecha.setText("");
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        int idMateria = Integer.parseInt(txtMateria.getText());
+        String nombre = txtNombreMateria.getText();
+        int anio = Integer.parseInt(txtFecha.getText());
+        
+        Materia materia = new Materia(idMateria, nombre, anio);
+        listaMateria.add(materia);
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

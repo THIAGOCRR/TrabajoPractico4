@@ -15,7 +15,7 @@ public class Materia {
     private String nombre;
     private int anio;
 
-    public Materia(int idMateria, String nombre, int año) {
+    public Materia(int idMateria, String nombre, int anio) {
         this.idMateria = idMateria;
         this.nombre = nombre;
         this.anio = anio;

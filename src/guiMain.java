@@ -161,7 +161,7 @@ System.exit(0);
         
           escritorio.removeAll();
        escritorio.repaint();
-            guiMateria materia = new guiMateria();
+            guiMateria materia = new guiMateria(listaMateria);
         escritorio.add(materia);
         materia.setVisible(true);
         escritorio.moveToFront(materia);
