@@ -11,7 +11,7 @@ package entidades;
 public class Colegio {
     public static void main(String[] args) {
         
-        Materia web2 = new Materia(1, "Wen 2", 2);
+        Materia web2 = new Materia(1, "Web 2", 2);
         Materia matematicas = new Materia(2, "Matematicas", 1);
         Materia labo1 = new Materia(3, "Laboratorio 1", 1);
         

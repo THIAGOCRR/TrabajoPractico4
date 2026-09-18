@@ -152,7 +152,7 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
         
         if(listaAlumnos.add(NuevoAlumno)){
         
-        JOptionPane.showMessageDialog(this, "se guardo el alumno correctamente");
+        JOptionPane.showMessageDialog(this, "Se guardo el alumno correctamente");
             
             
         
@@ -160,7 +160,7 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
         
         
         else{
-            JOptionPane.showMessageDialog(this, "el alumno cargado ya se registro");
+            JOptionPane.showMessageDialog(this, "El alumno cargado ya se registro");
             
             
         }
@@ -168,7 +168,7 @@ public class guiAlumnos extends javax.swing.JInternalFrame {
         }catch(NumberFormatException e ){
         
         
-        JOptionPane.showMessageDialog(rootPane, "tienes que poner un numero en el legajo");
+        JOptionPane.showMessageDialog(rootPane, "Tienes que poner un numero en el legajo");
         
         
         

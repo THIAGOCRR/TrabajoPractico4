@@ -136,7 +136,7 @@ public class guiInscripciones extends javax.swing.JInternalFrame {
         
         if(aluSeleccionado!=null && matSeleccionada!= null){
             if(aluSeleccionado.agregarMateria(matSeleccionada)){
-                JOptionPane.showMessageDialog(this, "Inscripcion exitosa."+aluSeleccionado+ "ahora tiene: "+aluSeleccionado.cantidadMateria() +" materias.");
+                JOptionPane.showMessageDialog(this, "Inscripcion exitosa. "+aluSeleccionado+ " ahora tiene: "+aluSeleccionado.cantidadMateria() +" materias.");
             }else{
                JOptionPane.showMessageDialog(this, "El alumno ya esta inscripto en esa materia");
             }

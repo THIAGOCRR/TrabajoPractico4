@@ -1,5 +1,6 @@
 import entidades.Materia;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -148,6 +149,8 @@ public class guiMateria extends javax.swing.JInternalFrame {
         
         Materia materia = new Materia(idMateria, nombre, anio);
         listaMateria.add(materia);
+        
+        JOptionPane.showMessageDialog(this, "Materia cargada correctamente");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
